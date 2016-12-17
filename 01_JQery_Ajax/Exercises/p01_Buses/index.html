@@ -26,8 +26,8 @@
 </div>
 <script>
     function getInfo() {
-        let busStopField =$('#stopName').empty();
-        let bussesField = $('#buses').empty();
+        $('#stopName').empty();
+        $('#buses').empty();
         let baseUrl = 'https://judgetests.firebaseio.com/businfo/';
         let stopId = $('#stopId').val();
         let url = baseUrl + stopId + '.json';
@@ -45,10 +45,8 @@
 
             let busStopName = respond.name;
             busStopField.append(busStopName);
-            
-            //console.log(respond.buses);
+
             for (let bus of keys) {
-                //console.log(bus + ' ' + respond.buses[bus]);
                 let li = $('<li>')
                     .text('Bus ' + bus + ' arrives in ' + respond.buses[bus] + ' minutes')
                     .appendTo(bussesField);

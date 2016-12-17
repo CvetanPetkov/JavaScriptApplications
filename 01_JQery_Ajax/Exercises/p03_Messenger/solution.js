@@ -39,9 +39,6 @@ function attachEvents() {
     function printMessages(respond) {
         textArea.val('');
         let messages = Object.keys(respond);
-        // let messages = [...Object.keys(respond)]
-        //     .sort((mA, mB) => respond[mA].timestamp - respond[mB].timestamp)
-        //     .map(m => respond[m]);
 
         for (let id of messages) {
             let name = respond[id].author;
