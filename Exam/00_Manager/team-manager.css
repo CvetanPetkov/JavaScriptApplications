@@ -1,0 +1,30 @@
+body{
+    font-family: 'Open Sans', sans-serif;
+    color: #333333;
+    height: 100%;
+    line-height: 15px;
+}
+.menu {
+    background: lightgray;
+    padding: 20px;
+}
+.menu button:hover {
+    background: darkgray;
+}
+.menu-item {
+    font-size: 1em;
+}
+/*.viewCatalog {*/
+    /*float: left;*/
+/*}*/
+.contentWrapper {
+    border: solid pink 2px;
+    width: 25%;
+}
+.item {
+    padding: 10px;
+    border: solid pink 2px;
+}
+.title {
+    background: pink;
+}

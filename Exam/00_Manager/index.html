@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Team Manager</title>
+    <script src="jquery-3.1.1.min.js"></script>
+    <script src="team-manager.js"></script>
+    <link rel="stylesheet" href="team-manager.css">
+    <link href="https://fonts.googleapis.com/css?family=Lato|Open+Sans" rel="stylesheet">
+</head>
+<body>
+
+    <header id="menu" class="menu">
+        <h1>Team Manager</h1>
+        <span id="loggedInUser"></span>
+        <button type="button" id="linkHome">Home</button>
+        <button type="button" id="linkCatalog">Catalog</button>
+        <button type="button" id="linkAbout">About</button>
+        <button type="button" id="linkLogin">Login</button>
+        <button type="button" id="linkRegister">Register</button>
+        <button type="button" id="linkLogout">Logout</button>
+    </header>
+
+    <main>
+        <section id="viewHome" class="viewHome">
+            <h2 id="title">Home Page</h2>
+            <p id="body-text">You are currently not logged in. Please, log in or register to view team options.</p>
+        </section>
+
+        <section id="viewRegister" class="viewRegister">
+            <h2 class="titleForm">Please register here</h2>
+            <form id="formRegister" class="form">
+                <div>Username:</div>
+                <div><input type="text" name="username" required /></div>
+                <div>Password:</div>
+                <div><input type="password" name="password" required /></div>
+                <div>Confirm Password:</div>
+                <div><input type="password" name="repeatPassword" required /></div>
+                <div><input type="submit" value="Register" /></div>
+            </form>
+        </section>
+
+        <section id="viewLogin" class="viewLogin">
+            <h2 class="titleForm">Login</h2>
+            <form id="formLogin" class="form">
+                <div>Username:</div>
+                <div><input type="text" name="username" required /></div>
+                <div>Password:</div>
+                <div><input type="password" name="password" required /></div>
+                <div><input type="submit" value="Login" /></div>
+            </form>
+        </section>
+
+        <section id="viewCatalog" class="viewCatalog">
+            <h2 class="titleForm">Catalog Page</h2>
+            <button type="button" id="linkCreate">Create team</button>
+            <div id="contentWrapper" class="contentWrapper">
+            </div>
+        </section>
+
+        <section id="viewCreate" class="viewCreate">
+            <h2 class="titleForm">Create team</h2>
+            <form id="formCreate" class="form">
+                <div>Name:</div>
+                <div><input type="text" name="name" required /></div>
+                <div>Description:</div>
+                <div><input type="text" name="description" required /></div>
+                <div><input type="submit" value="Submit team" /></div>
+            </form>
+        </section>
+
+        <section id="viewEdit" class="viewEdit">
+            <h2 class="titleForm">Edit team</h2>
+            <form id="formEdit" class="form">
+                <div>Name:</div>
+                <div><input type="text" name="name" required /></div>
+                <div>Description:</div>
+                <div><input type="text" name="description" required /></div>
+                <div><input type="submit" value="Send changes" /></div>
+            </form>
+        </section>
+
+    </main>
+
+    <footer>
+
+    </footer>
+
+<script>startApp()</script>
+</body>
+</html>
