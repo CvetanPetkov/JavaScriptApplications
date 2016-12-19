@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Github Commits</title>
+    <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
+</head>
+<body>
+GitHub username:
+<input type="text" id="username" value="Joro" /> <br>
+Repo: <input type="text" id="repo" value="Boro" />
+<button onclick="loadCommits()">Load Commits</button>
+<ul id="commits"></ul>
+<script>
+    function loadCommits() {
+        let apiUrl = 'https://api.github.com/repos';
+        let username = $('#username').val().trim();
+        let repository = $('#repo').val().trim();
+
+        if (username != '' && repository != '') {
+            $.ajax({
+                url: `${apiUrl}/${username}/${repository}/commits`,
+                method: 'GET'})
+                .then(displayRepos)
+                .catch(displayError);
+
+            function displayRepos(respond) {
+                $('#commits').empty();
+
+                for (let repo of respond) {
+                    let author = repo.commit.author.name;
+                    let message = repo.commit.message;
+                    $('<li>')
+                        .text(author + ': ' + message)
+                        .appendTo($('#commits'));
+                }
+            }
+
+            function displayError(err) {
+                $('#commits').empty();
+                $('<li>')
+                    .text('Error: ' + err.status + ' (' + err.statusText + ')')
+                    .appendTo($('#commits'));
+                let entry = $('#commits').find('li');
+            }
+        }
+    }
+</script>
+</body>
+</html>
